@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Waggle Dance</title>
+    <meta name="description" content="Waggle Dance">
+    <meta name="author" content="Andreas">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <input class="nav" id="back" type="button" value="↩" onclick="history.back()">
+      <p>Honey Bee Communication: Waggle Dance</p>
+    </div>
+    <div id="introduction">
+      <p>
+	&emsp;Honey bees communicate learned information about the nearest food
+	source to the rest of the hive by performing the <em>waggle dance</em>.
+	Upon returning to the hive after finding a lucrative source of food or
+	water, the honey bee will perform this dance by walking in a figure
+	'8' shape and doing a waggle in the middle. For distances less than 40
+	meters, variations of the waggle dance are performed. For distances
+	greater than 40 meters, the time it takes for the bee to complete a
+	circuit indicates the distance to the source; The orientation of the
+	dance in relation to the hive indicates the direction of the source
+	relative to the sun; and the magnitude of the waggling indicates how
+	exciting the food source is.
+      </p>
+    </div>
+    <div class="explanation" id="angle">
+      <p>
+	&emsp;The angle between the verticle of the sun and the orientation of the
+	waggle phase relative the the hive encode the <em>direction</em> of the food
+	source relative to the sun.
+      </p>
+      <div id="selectionBox">
+	<div id="angleSelect">angle of waggle: </div>
+	<p class="selectionValue" id="angleValue">0 degrees from the sun</p>
+      </div>
+      <div id="sunContainer">
+	<p id="sun">☼</p>
+      </div>
+      <div id="pathAnimation">
+	<script src="AnglePath.js"></script>
+      </div>
+    </div>
+    <div class="explanation" id="distance">
+      <p>
+	&emsp;The <em>distance</em> to the food source is encoded in the duration of the waggle
+	phase of the honey bee's waggle dance. The further away that the food
+	source is from the hive, the longer the waggle phase. 
+      </p>
+      <div id="selectionBox">
+	<div id="distanceSelect">distance to food: </div>
+	<p class="selectionValue" id="distanceValue">about 100m away</p>
+      </div>
+      <div id="pathAnimation">
+	<script src="DistancePath.js"></script>
+      </div>
+      
+    </div>
+    <div class="explanation" id="frequency">
+      <p>
+	&emsp;The final dimennsion of the dance encodes the <em>amount</em> of food that the
+	honey bee is trying to advertise to the rest of the hive. As the size
+	of the food source increases, the honey bee will waggle her abdomen at
+	a higher frequency to show other bees how excited she is!
+      </p>
+      <div id="selectionBox">
+	<div id="frequencySelect">amount of food: </div>
+	<p class="selectionValue" id="frequencyValue">🌼</p>
+      </div>
+      <div id="pathAnimation">
+	<script src="FrequencyPath.js"></script>
+      </div>
+    </div>
+    <div class="conclusion" id="allTogether">
+      <p>
+	&emsp;Putting it all together:
+      </p>
+
+
+      <div class="svg-container">
+	<svg id="click" xmlns="http://www.w3.org/2000/svg" width="1000" height="600">
+	  <defs>
+            <g id="pointer" transform="scale(2)">
+	      <text x="0" y="15" fill="red">🌼</text>
+            </g>
+	  </defs>
+	</svg>
+      </div>
+
+      <div id="pathAnimation">
+	<script src="AllTogetherPath.js"></script>
+      </div>
+      
+    </div>
+    <div class="sources">
+      <p>Sources and further reading:</p>
+      <ul>
+	<li><a href="https://www.amazon.com/Dance-Language-Orientation-Bees/dp/0674190505">Karl von Frisch - The Dance Language and Orientation of Bees</a></li>
+      </ul>
+    </div> 
+  </body>
+</html>
